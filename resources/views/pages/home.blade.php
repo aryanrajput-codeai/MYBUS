@@ -172,16 +172,16 @@
             <div class="rounded-3xl p-6 bg-gradient-to-br from-teal-700 to-emerald-800 text-white flex flex-col justify-between shadow-md relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-white/10 pointer-events-none"></div>
                 <div>
-                    <span class="text-[10px] font-extrabold px-2.5 py-1 bg-white/20 rounded-full uppercase tracking-wider inline-block mb-3">INSTANT DISCOUNT</span>
-                    <h3 class="text-xl font-extrabold leading-snug mb-1">10% Off up to ₹1,500 on Express Trains</h3>
-                    <p class="text-xs text-white/80">redRail confirmed seat reservations with tatkal assistance.</p>
+                    <span class="text-[10px] font-extrabold px-2.5 py-1 bg-white/20 rounded-full uppercase tracking-wider inline-block mb-3">ROUND TRIP SAVINGS</span>
+                    <h3 class="text-xl font-extrabold leading-snug mb-1">Flat 15% Off on Return Bus Tickets</h3>
+                    <p class="text-xs text-white/80">Save extra on round-trip luxury Volvo and AC sleeper bookings.</p>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/20 flex items-center justify-between">
-                    <button type="button" @click="copyCode('WELCOME10')" class="flex items-center gap-1.5 bg-white text-teal-800 font-extrabold text-xs px-3.5 py-1.5 rounded-xl hover:bg-emerald-50 transition">
+                    <button type="button" @click="copyCode('RETURN15')" class="flex items-center gap-1.5 bg-white text-teal-800 font-extrabold text-xs px-3.5 py-1.5 rounded-xl hover:bg-emerald-50 transition">
                         <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                        <span>Code: WELCOME10</span>
+                        <span>Code: RETURN15</span>
                     </button>
-                    <span class="text-[11px] text-white/70 font-semibold">All Users</span>
+                    <span class="text-[11px] text-white/70 font-semibold">All Routes</span>
                 </div>
             </div>
 

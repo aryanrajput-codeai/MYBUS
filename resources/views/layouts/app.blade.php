@@ -104,7 +104,7 @@
                         </div>
                     </a>
 
-                    <!-- Vertical Navigation Tabs (redBus Style with icons & active badges) -->
+                    <!-- Navigation Tabs: Exclusively Bus & Tour Travel -->
                     <nav class="hidden lg:flex items-center gap-2 text-sm font-bold text-slate-700">
                         <!-- Bus Tickets -->
                         <a href="{{ route('buses.index') }}"
@@ -115,19 +115,7 @@
                             <span>Bus Tickets</span>
                         </a>
 
-                        <!-- Train Tickets -->
-                        <a href="{{ route('services.trains') }}"
-                            class="flex items-center gap-2 px-4 py-2.5 rounded-2xl transition {{ request()->routeIs('services.trains') ? 'bg-red-50 text-red-600 shadow-2xs font-extrabold border border-red-200' : 'hover:bg-slate-50 hover:text-red-600' }}">
-                            <div
-                                class="w-7 h-7 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
-                                <i data-lucide="train" class="w-4 h-4"></i>
-                            </div>
-                            <span>Train Tickets</span>
-                            <span
-                                class="text-[9px] font-extrabold px-1.5 py-0.5 bg-orange-500 text-white rounded-full uppercase">redRail</span>
-                        </a>
-
-                        <!-- Holiday Packages -->
+                        <!-- Holiday Tours & Packages -->
                         <a href="{{ route('packages.index') }}"
                             class="flex items-center gap-2 px-4 py-2.5 rounded-2xl transition {{ request()->routeIs('packages.*') ? 'bg-red-50 text-red-600 shadow-2xs font-extrabold border border-red-200' : 'hover:bg-slate-50 hover:text-red-600' }}">
                             <div class="w-7 h-7 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center">
@@ -136,47 +124,23 @@
                             <span>Holiday Tours</span>
                         </a>
 
-                        <!-- Other Services Dropdown -->
-                        <div class="relative" x-data="{ open: false }" @mouseleave="open = false">
-                            <button @mouseover="open = true" @click="open = !open"
-                                class="flex items-center gap-1.5 px-3 py-2.5 rounded-2xl hover:bg-slate-50 transition text-slate-700 hover:text-red-600 font-bold">
-                                <span>More Services</span>
-                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform"
-                                    :class="{ 'rotate-180': open }"></i>
-                            </button>
-                            <div x-show="open" x-transition.opacity.duration.150ms
-                                class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 z-50">
-                                <a href="{{ route('services.visa') }}"
-                                    class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-xs font-semibold text-slate-700">
-                                    <i data-lucide="stamp" class="w-4 h-4 text-red-600"></i>
-                                    <div>
-                                        <div class="font-bold text-slate-900">Visa Assistance</div>
-                                        <div class="text-[11px] text-slate-400">Dubai, Schengen, Thailand e-Visa</div>
-                                    </div>
-                                </a>
-                                <a href="{{ route('services.passport') }}"
-                                    class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-xs font-semibold text-slate-700">
-                                    <i data-lucide="file-badge" class="w-4 h-4 text-red-600"></i>
-                                    <div>
-                                        <div class="font-bold text-slate-900">Passport Seva</div>
-                                        <div class="text-[11px] text-slate-400">Fresh & Tatkaal Express</div>
-                                    </div>
-                                </a>
-                                <a href="{{ route('services.hotels') }}"
-                                    class="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-50 text-xs font-semibold text-slate-700">
-                                    <i data-lucide="hotel" class="w-4 h-4 text-red-600"></i>
-                                    <div>
-                                        <div class="font-bold text-slate-900">Hotel Stays</div>
-                                        <div class="text-[11px] text-slate-400">Luxury Resorts & Havelis</div>
-                                    </div>
-                                </a>
-                                <a href="{{ route('services.custom_tour') }}"
-                                    class="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 text-xs font-bold text-red-700 border-t border-slate-100 mt-1">
-                                    <i data-lucide="sparkles" class="w-4 h-4 text-red-600"></i>
-                                    <span>Custom Tour Architect</span>
-                                </a>
+                        <!-- Live GPS Bus Tracking -->
+                        <a href="{{ route('buses.search', ['from' => 'Delhi', 'to' => 'Manali', 'date' => date('Y-m-d')]) }}"
+                            class="flex items-center gap-2 px-4 py-2.5 rounded-2xl transition hover:bg-slate-50 hover:text-red-600">
+                            <div class="w-7 h-7 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
+                                <i data-lucide="navigation" class="w-4 h-4"></i>
                             </div>
-                        </div>
+                            <span>Live Bus Tracker</span>
+                        </a>
+
+                        <!-- About NANDAN TOURS -->
+                        <a href="{{ route('about') }}"
+                            class="flex items-center gap-2 px-4 py-2.5 rounded-2xl transition {{ request()->routeIs('about') ? 'bg-red-50 text-red-600 shadow-2xs font-extrabold border border-red-200' : 'hover:bg-slate-50 hover:text-red-600' }}">
+                            <div class="w-7 h-7 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center">
+                                <i data-lucide="info" class="w-4 h-4"></i>
+                            </div>
+                            <span>About Us</span>
+                        </a>
                     </nav>
                 </div>
 
@@ -278,17 +242,17 @@
                 class="flex items-center gap-3 p-3 bg-red-50 text-red-700 font-bold rounded-xl text-sm">
                 <i data-lucide="bus" class="w-5 h-5"></i> Bus Tickets
             </a>
-            <a href="{{ route('services.trains') }}"
-                class="flex items-center gap-3 p-3 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-sm">
-                <i data-lucide="train" class="w-5 h-5 text-orange-600"></i> Train Tickets (redRail)
-            </a>
             <a href="{{ route('packages.index') }}"
                 class="flex items-center gap-3 p-3 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-sm">
-                <i data-lucide="palmtree" class="w-5 h-5 text-teal-600"></i> Holiday Packages
+                <i data-lucide="palmtree" class="w-5 h-5 text-teal-600"></i> Holiday Tours & Packages
             </a>
-            <a href="{{ route('services.custom_tour') }}"
+            <a href="{{ route('about') }}"
                 class="flex items-center gap-3 p-3 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-sm">
-                <i data-lucide="sparkles" class="w-5 h-5 text-amber-600"></i> Custom Tour Plan
+                <i data-lucide="info" class="w-5 h-5 text-slate-600"></i> About NANDAN TOURS
+            </a>
+            <a href="{{ route('contact') }}"
+                class="flex items-center gap-3 p-3 hover:bg-slate-50 text-slate-700 font-bold rounded-xl text-sm">
+                <i data-lucide="headset" class="w-5 h-5 text-amber-600"></i> 24x7 Customer Support
             </a>
             <div class="border-t border-slate-100 pt-3 flex gap-2">
                 @if(Auth::check())
@@ -411,11 +375,11 @@
             <span class="text-[10px] font-bold mt-1">Buses</span>
         </a>
 
-        <!-- Trains Tab -->
-        <a href="{{ route('services.trains') }}"
-           class="flex flex-col items-center justify-center flex-1 py-1 transition {{ request()->routeIs('services.trains') ? 'text-[#d84e55]' : 'text-slate-400 hover:text-slate-600' }}">
-            <i data-lucide="train" class="w-5 h-5"></i>
-            <span class="text-[10px] font-bold mt-1">redRail</span>
+        <!-- Live Bus Track Tab -->
+        <a href="{{ route('buses.search', ['from' => 'Delhi', 'to' => 'Manali', 'date' => date('Y-m-d')]) }}"
+           class="flex flex-col items-center justify-center flex-1 py-1 transition text-slate-400 hover:text-slate-600">
+            <i data-lucide="navigation" class="w-5 h-5"></i>
+            <span class="text-[10px] font-bold mt-1">Live Track</span>
         </a>
 
         <!-- Packages Tab -->
