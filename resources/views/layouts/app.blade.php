@@ -19,6 +19,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
@@ -49,10 +54,10 @@
     @stack('styles')
 </head>
 
-<body class="bg-[#f7f7f7] text-[#3e3e52] antialiased flex flex-col min-h-screen pb-16 md:pb-0">
+<body class="bg-[#f7f7f7] text-[#3e3e52] antialiased flex flex-col min-h-screen pb-16 md:pb-0 overflow-x-hidden w-full max-w-full">
 
-    <!-- redBus Global Announcement Bar -->
-    <div class="bg-[#1d2129] text-white/90 text-xs py-2 px-4 border-b border-slate-800">
+    <!-- redBus Global Announcement Bar (Desktop Only, hidden on mobile to eliminate overflow) -->
+    <div class="hidden md:block bg-[#1d2129] text-white/90 text-xs py-2 px-4 border-b border-slate-800">
         <div
             class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
@@ -83,22 +88,22 @@
     </div>
 
     <!-- redBus Primary Sticky Header -->
-    <header class="bg-white sticky top-0 z-50 border-b border-slate-200 shadow-xs" x-data="{ mobileMenuOpen: false }">
+    <header class="bg-white sticky top-0 z-50 border-b border-slate-200 shadow-xs max-w-full" x-data="{ mobileMenuOpen: false }">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-4">
+            <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
 
                 <!-- Brand Logo (redBus Style) -->
                 <div class="flex items-center gap-8">
-                    <a href="{{ route('home') }}" class="flex items-center gap-3 shrink-0 group">
+                    <a href="{{ route('home') }}" class="flex items-center gap-2.5 sm:gap-3 shrink-0 group">
                         <div
-                            class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center text-white shadow-md shadow-red-500/20 group-hover:scale-105 transition-transform">
-                            <i data-lucide="bus" class="w-6 h-6"></i>
+                            class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center text-white shadow-md shadow-red-500/20 group-hover:scale-105 transition-transform">
+                            <i data-lucide="bus" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </div>
                         <div>
-                            <span class="text-2xl font-extrabold tracking-tight text-slate-900 block leading-none">
+                            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 block leading-none">
                                 NANDAN<span class="text-red-600">BUS</span>
                             </span>
-                            <span class="text-[9px] tracking-widest text-slate-400 uppercase font-extrabold block mt-1">
+                            <span class="text-[8px] sm:text-[9px] tracking-widest text-slate-400 uppercase font-extrabold block mt-1">
                                 An Indian Travel ERP Platform
                             </span>
                         </div>

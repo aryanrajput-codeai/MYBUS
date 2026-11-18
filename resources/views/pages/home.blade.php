@@ -17,7 +17,7 @@
             <span>India's Leading Bus & Holiday Platform</span>
         </div>
 
-        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 leading-tight break-words">
             India's No. 1 Online Bus Ticket Booking Site
         </h1>
         <p class="text-white/90 text-xs sm:text-sm max-w-xl mx-auto mb-10 font-medium">
